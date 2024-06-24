@@ -26,8 +26,8 @@ public class TokenController {
 
         MultiValueMap<String, String> formData = new LinkedMultiValueMap<>();
         formData.add("client_id", user.clientId);
-        formData.add("username", user.username);
-        formData.add("password", user.password);
+        formData.add("client_secret", user.clientSecret);
+        formData.add("scope", user.scope);
         formData.add("grant_type", user.grantType);
 
         HttpEntity<MultiValueMap<String, String>> entity =
@@ -37,5 +37,5 @@ public class TokenController {
         return ResponseEntity.ok(gson.toJson(result.getBody()));
     }
 
-    public record User(String password, String clientId, String grantType, String username) {}
+    public record User(String clientId, String clientSecret, String scope, String grantType) {}
 }

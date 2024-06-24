@@ -31,7 +31,7 @@ public class TokenControllerTest {
 
     @Test
     public void testToken() {
-        TokenController.User user = new TokenController.User("password", "clientId", "password", "username");
+        TokenController.User user = new TokenController.User("password", "clientSecret", "scope", "client_credentials");
 
         ResponseEntity<String> mockResponse = new ResponseEntity<>("{\"access_token\":\"mock_token\"}", HttpStatus.OK);
         when(restTemplate.postForEntity(any(String.class), any(HttpEntity.class), eq(String.class)))
