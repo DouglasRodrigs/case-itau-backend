@@ -1,5 +1,7 @@
 # README!!
 ### Esta aplicação Spring Boot implementa dois endpoints seguros usando OAuth2 do tipo Authentication password. A seguir estão detalhadas as funcionalidades e instruções para configurar e usar a aplicação.
+Obs: Para a autenticação funcionar ela faz integração com o Keycloak, logo deverá ser instalado localmente. Pode ser feito o provisionamento pelo Docker:
+docker run -p 8080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:22.0.1 start-dev
 
 **Funcionalidades**
 
